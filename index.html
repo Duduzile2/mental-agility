@@ -1,0 +1,1135 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mental Agility | What is not within your control does not define you</title>
+<meta name="description" content="Mental Agility is a space for adaptability, emotional clarity, and resilience. What is not within your control does not define you." />
+<style>
+:root {
+  --bg: #07110d;
+  --bg-soft: #0b1c16;
+  --text: #e9f5ef;
+  --muted: #a7c7b8;
+  --line: #123326;
+  --accent: #2fdc9f;
+  --accent-soft: #1fa37a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+nav { position: sticky; top: 0; background: rgba(7,17,13,0.95); border-bottom: 1px solid var(--line); z-index:1000; }
+.nav-container { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight:600; letter-spacing:0.5px; color: var(--accent); }
+.nav-links { list-style:none; display:flex; gap:1.5rem; }
+.nav-links a { text-decoration:none; color:var(--muted); font-size:0.95rem; }
+.nav-links a:hover { color: var(--text); }
+header { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:4rem 2rem; border-bottom:1px solid var(--line); }
+.hero { max-width:900px; }
+.hero h1 { font-size:clamp(2.8rem,6vw,4.5rem); font-weight:500; margin-bottom:1.5rem; }
+.hero p { font-size:1.1rem; color:var(--muted); max-width:720px; }
+section { padding:6rem 2rem; border-bottom:1px solid var(--line); }
+.container { max-width:1000px; margin:0 auto; }
+h2 { font-size:2rem; font-weight:500; margin-bottom:1.5rem; }
+h3 { font-size:1.4rem; margin-top:1rem; margin-bottom:0.8rem; }
+p { margin-bottom:1.2rem; color:var(--muted); }
+.pillars { display:grid; gap:2rem; margin-top:3rem; }
+.pillars-conditions { grid-template-columns: repeat(3, 1fr); }
+.pillar { padding:1.5rem; border:1px solid var(--line); border-radius:12px; transition: transform 0.3s ease, border-color 0.3s ease; }
+.pillar:hover { transform:translateY(-4px); border-color:var(--accent); }
+.quote { font-size:1.4rem; max-width:800px; color:var(--text); margin-top:1.5rem; }
+.founder { display:grid; gap:1.5rem; max-width:700px; }
+footer { padding:3rem 2rem; text-align:center; font-size:0.9rem; color:var(--muted); }
+.fade { opacity:0; transform:translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade.show { opacity:1; transform:translateY(0); }
+.articles-links a { color: var(--accent); text-decoration: underline; display:block; margin-top:0.5rem; }
+</style>
+</head>
+<body><nav>
+  <div class="nav-container">
+    <div class="logo">Mental Agility</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#conditions">Conditions</a></li>
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav><header>
+  <div class="hero fade">
+    <h1>Mental Agility</h1>
+    <p>What is not within your control does not define you. Mental Agility is about adapting the mind, regulating emotion, and remaining grounded in moments of uncertainty.</p>
+  </div>
+
+<section id="control-tool">
+  <style>
+    #control-tool {
+      padding: 4rem 1rem;
+      background: linear-gradient(180deg, #07110d, #0b1c16);
+      border-bottom: 1px solid #123326;
+    }
+
+    .control-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .control-header {
+      max-width: 700px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .control-header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      color: #2fdc9f;
+    }
+
+    .control-header p {
+      color: #a7c7b8;
+      font-size: 1rem;
+    }
+
+    .control-zones {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .zone {
+      border: 2px dashed #2fdc9f55;
+      border-radius: 16px;
+      padding: 1.5rem;
+      min-height: 180px;
+      transition: border-color 0.3s ease;
+    }
+
+    .zone h3 {
+      margin-bottom: 0.5rem;
+      color: #2fdc9f;
+    }
+
+    .zone p {
+      font-size: 0.85rem;
+      color: #a7c7b8;
+      margin-bottom: 1rem;
+    }
+
+    .zone.drag-over {
+      border-color: #2fdc9f;
+    }
+
+    .thoughts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    .thought {
+      padding: 0.5rem 0.9rem;
+      background: #0b1c16;
+      border: 1px solid #123326;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: grab;
+      color: #e9f5ef;
+      user-select: none;
+    }
+
+    .thought:active {
+      cursor: grabbing;
+    }
+
+    .reflection {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-left: 3px solid #2fdc9f;
+      font-size: 1.05rem;
+      color: #e9f5ef;
+      display: none;
+    }
+
+    .reset-btn {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.7rem 1.5rem;
+      background: #2fdc9f;
+      border: none;
+      border-radius: 999px;
+      color: #07110d;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .reset-btn:hover {
+      background: #1fa67b;
+    }
+
+    @media (max-width: 768px) {
+      .control-zones {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="control-container">
+    <div class="control-header">
+      <h2>Control vs No Control</h2>
+      <p>Drag or tap each thought into the space where it belongs. This is about awareness — not getting it "right".</p>
+    </div>
+
+    <div class="control-zones">
+      <div class="zone" data-zone="control">
+        <h3>Within My Control</h3>
+        <p>Things I can influence, choose, or respond to.</p>
+      </div>
+
+      <div class="zone" data-zone="nocontrol">
+        <h3>Outside My Control</h3>
+        <p>Things I cannot change, only acknowledge or accept.</p>
+      </div>
+    </div>
+
+    <div class="thoughts" id="thoughts">
+      <div class="thought" draggable="true">How others react to me</div>
+      <div class="thought" draggable="true">My effort</div>
+      <div class="thought" draggable="true">My past mistakes</div>
+      <div class="thought" draggable="true">My boundaries</div>
+      <div class="thought" draggable="true">Other people’s opinions</div>
+      <div class="thought" draggable="true">How I speak to myself</div>
+      <div class="thought" draggable="true">Unexpected change</div>
+    </div>
+
+    <div class="reflection" id="reflection">
+      The more energy you spend on what’s outside your control, the heavier life feels.  
+      Clarity begins when you redirect attention to what’s yours.
+    </div>
+
+    <button class="reset-btn" id="resetBtn">Reset</button>
+  </div>
+
+  <script>
+    const thoughts = document.querySelectorAll('.thought');
+    const zones = document.querySelectorAll('.zone');
+    const reflection = document.getElementById('reflection');
+    const resetBtn = document.getElementById('resetBtn');
+    const thoughtsContainer = document.getElementById('thoughts');
+
+    let placedCount = 0;
+
+    thoughts.forEach(thought => {
+      // Drag & drop for desktop
+      thought.addEventListener('dragstart', () => thought.classList.add('dragging'));
+      thought.addEventListener('dragend', () => thought.classList.remove('dragging'));
+
+      // Tap support for mobile
+      thought.addEventListener('click', () => {
+        thoughts.forEach(t => t.classList.remove('selected'));
+        thought.classList.add('selected');
+      });
+    });
+
+    zones.forEach(zone => {
+      // Desktop drag events
+      zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+      zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+      zone.addEventListener('drop', () => {
+        const dragged = document.querySelector('.dragging');
+        if (dragged && !zone.contains(dragged)) {
+          zone.appendChild(dragged);
+          placedCount++;
+          if (placedCount >= 5) reflection.style.display = 'block';
+        }
+        zone.classList.remove('drag-over');
+      });
+
+      // Mobile tap drop
+      zone.addEventListener('click', () => {
+        const selected = document.querySelector('.thought.selected');
+        if (selected && !zone.contains(selected)) {
+          zone.appendChild(selected);
+          selected.classList.remove('selected');
+          placedCount++;
+          if (placedCount >= 5) reflection.style.display = 'block';
+        }
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      // Move thoughts back
+      thoughts.forEach(thought => thoughtsContainer.appendChild(thought));
+      placedCount = 0;
+      reflection.style.display = 'none';
+    });
+  </script>
+</section>
+  
+</header><section id="about">
+  <div class="container fade">
+    <h2>What Mental Agility Means</h2>
+    <p>Mental agility is the capacity to think flexibly, respond thoughtfully, and remain emotionally balanced when life shifts unexpectedly.</p>
+    <p>It allows individuals to adjust without becoming disconnected from who they are, even in times of rapid change or uncertainty.</p>
+  </div>
+</section><section>
+  <div class="container fade">
+    <h2>The Pillars of Mental Agility</h2>
+    <div class="pillars">
+      <div class="pillar"><h3>Flexible Thinking</h3><p>Flexible thinking allows you to break free from rigid patterns of thought. It helps you see challenges from multiple perspectives, innovate solutions, and adapt as circumstances change. This skill is critical in both personal and professional life, reducing stress and increasing confidence.</p></div>
+      <div class="pillar"><h3>Emotional Regulation</h3><p>Emotional regulation involves noticing and naming emotions without letting them dictate your decisions. It’s about pausing before reacting, developing coping strategies, and responding to situations thoughtfully. Strong regulation improves relationships and prevents emotional overwhelm.</p></div>
+      <div class="pillar"><h3>Adaptability</h3><p>Adaptability is the ability to adjust to new environments, responsibilities, and life changes without losing composure. It includes learning new skills, embracing uncertainty, and staying grounded under pressure.</p></div>
+      <div class="pillar"><h3>Resilience</h3><p>Resilience is the ability to recover from setbacks and continue moving forward. It requires self-awareness, support systems, reflection, and maintaining hope even during challenging times. Resilience doesn’t eliminate hardship but strengthens the ability to cope and grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container fade">
+    <h2>Perspective</h2>
+    <p class="quote">The founder of Mental Agility, Blessing Sibeko, personally experienced a mental health journey marked by exhaustion, anxiety, and moments of despair. Through navigating these challenges, the founder learned the deep impact of stress, emotional overwhelm, and societal pressures on well-being. Mental Agility is born from these experiences: a commitment to understanding feelings fully, embracing vulnerability, and building strategies to recover, thrive, and help others do the same. This space is designed to educate, normalize conversations, and guide individuals toward clarity and resilience.</p>
+  </div>
+</section><section id="conditions">
+  <div class="container fade">
+    <h2>Mental Health Conditions Overview</h2>
+    <p>The following cards provide brief introductions to each condition. For full, in-depth information, scroll down to the detailed sections below.</p>
+    <div class="pillars pillars-conditions">
+      <div class="pillar"><h3>Depression</h3><p>Depression involves persistent sadness, loss of interest, fatigue, and cognitive difficulties. It impacts daily functioning and emotional well-being.</p></div>
+      <div class="pillar"><h3>Anxiety Disorders</h3><p>Anxiety disorders involve chronic worry, nervousness, and heightened physiological responses. Panic attacks may also occur.</p></div>
+      <div class="pillar"><h3>Bipolar Disorder</h3><p>Bipolar disorder features mood shifts from depression to mania or hypomania, affecting energy, behavior, and cognition.</p></div>
+      <div class="pillar"><h3>Post-Traumatic Stress Disorder (PTSD)</h3><p>PTSD develops after trauma, causing flashbacks, hypervigilance, emotional numbness, and avoidance behaviors.</p></div>
+      <div class="pillar"><h3>Burnout</h3><p>Burnout is chronic exhaustion from prolonged stress, leading to detachment, reduced performance, and emotional depletion.</p></div>
+      <div class="pillar"><h3>Adjustment Disorders</h3><p>Adjustment disorders occur when emotional or behavioral responses to life changes are disproportionate and interfere with daily life.</p></div>
+    </div>
+  </div>
+</section><!-- Full in-depth sections for each condition --><section id="depression-full">
+  <div class="container fade">
+    <h2>Depression</h2>
+    <p>Depression is a complex mood disorder that affects thoughts, feelings, and daily activities. Beyond feeling sad, individuals may experience emptiness, hopelessness, fatigue, changes in appetite, and difficulty concentrating.</p>
+    <p>Thought patterns often include self-criticism, guilt, and a negative view of oneself and the world. Social withdrawal and loss of interest in previously enjoyable activities are common.</p>
+    <p>Coping strategies include maintaining routines, engaging in physical activity, journaling emotions, building social connections, and seeking professional therapy or medication.</p>
+    <p>Depression is treatable. Seek help if symptoms persist, significantly disrupt daily life, or include thoughts of self-harm.</p>
+  </div>
+</section><section id="anxiety-full">
+  <div class="container fade">
+    <h2>Anxiety Disorders</h2>
+    <p>Anxiety disorders involve excessive fear, worry, or nervousness that disrupt daily life. Symptoms can be physical (rapid heartbeat, tension, dizziness) and cognitive (overthinking, worst-case scenarios).</p>
+    <p>Panic attacks are sudden intense episodes with physical symptoms like chest pain, shortness of breath, or trembling, peaking within minutes.</p>
+    <p>Common thought patterns include rumination, fear of loss of control, and hyperawareness of potential threats. Coping strategies include mindfulness, grounding exercises, cognitive restructuring, limiting overstimulation, and professional therapy or medication when needed.</p>
+    <p>Seek help if anxiety leads to avoidance, panic attacks, sleep disruption, or social/occupational impairment.</p>
+  </div>
+</section><section id="bipolar-full">
+  <div class="container fade">
+    <h2>Bipolar Disorder</h2>
+    <p>Bipolar disorder is a mood disorder characterized by alternating episodes of depression and mania or hypomania. Depressive phases mirror major depression, while manic phases involve elevated or irritable mood, impulsivity, and increased energy.</p>
+    <p>Symptoms include decreased need for sleep, rapid speech, racing thoughts, risk-taking, and impaired judgment during mania. Mood swings may last days to weeks and affect personal, social, and occupational life.</p>
+    <p>Management involves medication (mood stabilizers, antipsychotics), therapy (CBT, psychoeducation), lifestyle adjustments, sleep regulation, and support networks.</p>
+    <p>Seek professional help if mood shifts affect daily life, safety, or relationships.</p>
+  </div>
+  </section>
+
+  <section id="schizophrenia-full">
+  <div class="container fade">
+    <h2>Schizophrenia</h2>
+
+    <p>
+      Schizophrenia is a chronic mental health condition that affects how a person thinks,
+      perceives reality, experiences emotions, and relates to others. It is not a split
+      personality, but a disorder involving disruptions in thought processes and perception.
+    </p>
+
+    <p>
+      Common symptoms include hallucinations (such as hearing voices), delusions
+      (fixed false beliefs), disorganized thinking or speech, reduced emotional expression,
+      and difficulty with motivation and daily functioning.
+    </p>
+
+    <p>
+      Individuals may struggle to distinguish between what is real and what is not,
+      which can be deeply distressing and isolating. Symptoms often emerge in late
+      adolescence or early adulthood and may fluctuate in intensity.
+    </p>
+
+    <p>
+      Management typically involves antipsychotic medication, psychotherapy,
+      structured support, and stable routines. With consistent treatment and support,
+      many people with schizophrenia are able to lead meaningful and productive lives.
+    </p>
+
+    <p>
+      Seek professional help if symptoms interfere with daily life, safety,
+      relationships, or reality perception.
+    </p>
+  </div>
+</section>
+
+</section><section id="ptsd-full">
+  <div class="container fade">
+    <h2>Post-Traumatic Stress Disorder (PTSD)</h2>
+    <p>PTSD develops after exposure to trauma. Symptoms include intrusive memories, flashbacks, emotional numbness, hypervigilance, avoidance, and sleep disturbances.</p>
+    <p>Individuals may experience persistent fear, difficulty trusting others, and feeling unsafe even in non-threatening environments. Emotional regulation and daily functioning are often impaired.</p>
+    <p>Coping strategies include therapy (CBT, EMDR), grounding techniques, mindfulness, and gradual exposure to triggers. Support networks are crucial for recovery.</p>
+    <p>Seek professional help if trauma-related symptoms persist, worsen, or disrupt daily life.</p>
+  </div>
+</section><section id="burnout-full">
+  <div class="container fade">
+    <h2>Burnout</h2>
+    <p>Burnout is chronic physical and emotional exhaustion caused by prolonged stress, often work- or caregiving-related. Symptoms include fatigue, detachment, irritability, cynicism, and reduced sense of accomplishment.</p>
+    <p>Coping strategies include rest, establishing boundaries, delegating tasks, therapy, and lifestyle adjustments like mindfulness, exercise, and self-care routines.</p>
+    <p>Seek support if exhaustion persists, impairs functioning, or leads to health problems.</p>
+  </div>
+</section><section id="adjustment-full">
+  <div class="container fade">
+    <h2>Adjustment Disorders</h2>
+    <p>Adjustment disorders occur when emotional or behavioral responses to identifiable life changes are excessive. Common triggers include loss, relocation, relationship changes, or job transitions.</p>
+    <p>Symptoms include sadness, anxiety, irritability, and difficulty functioning. Emotional responses are disproportionate but tied to the stressor.</p>
+    <p>Coping strategies include therapy, social support, structured routines, stress management, and problem-solving approaches. With time and support, symptoms often improve.</p>
+    <p>Seek help if distress persists, intensifies, or significantly disrupts daily life.</p>
+  </div>
+    </section>
+
+    <section id="adhd-full" class="fade">
+  <div class="container">
+    <h2>Attention-Deficit/Hyperactivity Disorder (ADHD)</h2>
+    <p>ADHD is a neurodevelopmental condition that affects focus, attention, and impulse control. It can appear in childhood and continue into adulthood, impacting school, work, and daily life.</p>
+    
+    <p>Common symptoms include:</p>
+    <ul>
+      <li>Difficulty sustaining attention or completing tasks</li>
+      <li>Being easily distracted or forgetful</li>
+      <li>Impulsivity or acting without thinking</li>
+      <li>Restlessness or difficulty sitting still</li>
+      <li>Struggling with organization and time management</li>
+    </ul>
+    
+    <p>ADHD can influence emotions, relationships, and self-esteem, but with understanding and strategies, individuals can thrive.</p>
+    
+    <p>Coping strategies include:</p>
+    <ul>
+      <li>Breaking tasks into smaller, manageable steps</li>
+      <li>Using reminders, alarms, and planners</li>
+      <li>Creating structured routines and environments</li>
+      <li>Engaging in physical activity to release excess energy</li>
+      <li>Seeking professional guidance, therapy, or medication when appropriate</li>
+    </ul>
+    
+    <p>It’s important to remember that ADHD does not define an individual’s potential. With support and self-awareness, people with ADHD can succeed and excel in their goals.</p>
+  </div>
+</section>
+
+<section id="myths-facts">
+  <div class="container fade">
+    <h2>Myths vs Facts</h2>
+
+    <p>
+      Misinformation around mental health often creates shame, fear, and silence.
+      Separating myths from facts helps normalize experiences and encourages understanding,
+      compassion, and support.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Myth: Mental illness is a sign of weakness</h3>
+        <p>
+          <strong>Fact:</strong> Mental health conditions are not caused by weakness.
+          They involve complex interactions between biology, environment, trauma,
+          stress, and life circumstances.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Myth: If someone is functioning, they are fine</h3>
+        <p>
+          <strong>Fact:</strong> Many people continue working, studying, and caring
+          for others while silently struggling. Functioning does not equal wellbeing.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Myth: Anxiety is just overthinking</h3>
+        <p>
+          <strong>Fact:</strong> Anxiety is a nervous system response involving the
+          brain and body. It is not something a person can simply “switch off.”
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Myth: Depression is just sadness</h3>
+        <p>
+          <strong>Fact:</strong> Depression can involve numbness, exhaustion,
+          hopelessness, difficulty concentrating, and loss of interest —
+          not only sadness.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Myth: Schizophrenia means split personality</h3>
+        <p>
+          <strong>Fact:</strong> Schizophrenia does not involve multiple personalities.
+          It affects perception, thinking, and interpretation of reality.
+        </p>
+      </div>
+
+      <div class="pillar">
+        <h3>Myth: Strong people don’t need help</h3>
+        <p>
+          <strong>Fact:</strong> Seeking help is a form of strength.
+          It reflects self-awareness, courage, and a commitment to healing.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      Understanding mental health through accurate information reduces stigma
+      and opens the door to empathy, support, and recovery.
+    </p>
+  </div>
+</section>
+
+<section id="mental-quiz" class="fade">
+  <div class="quiz-container">
+    <h2>Mental Health Quiz</h2>
+    <p>Test your knowledge on mental health and resilience! Remember, it's okay to get things wrong—every question is a learning opportunity.</p>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+
+    <!-- Quiz Card -->
+    <div id="quiz" class="quiz-card">
+      <div class="question-container">
+        <p id="question">Loading...</p>
+      </div>
+      <div class="answers-container">
+        <!-- Buttons generated dynamically -->
+      </div>
+    </div>
+
+    <!-- Feedback Card -->
+    <div id="feedback-container" class="feedback-card fade">
+      <p id="feedback"></p>
+      <button id="next-btn" class="btn">Next Question</button>
+    </div>
+
+    <!-- Result Card (hidden until quiz ends) -->
+    <div id="result" class="result-card fade" style="display:none;">
+      <h3 id="final-score"></h3>
+      <p id="result-feedback"></p>
+      <p id="result-encourage"></p>
+      <button id="restart-btn" class="btn">Try Again</button>
+    </div>
+  </div>
+
+  <style>
+    /* Container */
+    #mental-quiz {
+      background: linear-gradient(135deg, #07110d, #0b1c16);
+      color: #e9f5ef;
+      padding: 5rem 2rem;
+      border-radius: 20px;
+      margin: 2rem 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    #mental-quiz h2 {
+      font-size: 3rem;
+      color: #2fdc9f;
+      margin-bottom: 0.5rem;
+    }
+
+    #mental-quiz p {
+      color: #a7c7b8;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Progress Bar */
+    .progress-bar {
+      background: #123326;
+      height: 12px;
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, #2fdc9f, #1fa37a, #17a36c);
+      height: 100%;
+      width: 0%;
+      border-radius: 12px;
+      transition: width 0.5s ease;
+    }
+
+    /* Cards */
+    .quiz-card, .feedback-card, .result-card {
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, opacity 0.5s ease;
+    }
+
+    .quiz-card.fade, .feedback-card.fade, .result-card.fade {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .quiz-card.show, .feedback-card.show, .result-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .question-container p {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Buttons */
+    .answers-container {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .answers-container button {
+      background: linear-gradient(90deg, #2fdc9f, #1fa37a, #17a36c);
+      border: none;
+      color: #07110d;
+      font-weight: bold;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .answers-container button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      background: #e27b7b;
+      color: #07110d;
+      padding: 0.8rem 1.3rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #b92c2c;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+
+    #feedback-container p, #result-feedback, #result-encourage {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #a7c7b8;
+    }
+  </style>
+
+  <script>
+    const quizData = [
+      { question: "Flexible thinking helps you see challenges from multiple perspectives.", answers:["True","False"], correct:"True", explanation:"Flexible thinking allows you to adapt and reduce stress." },
+      { question: "Emotional regulation means ignoring your feelings.", answers:["True","False"], correct:"False", explanation:"Emotional regulation is noticing feelings and responding thoughtfully." },
+      { question: "Resilience is the ability to recover from setbacks.", answers:["True","False"], correct:"True", explanation:"Resilience strengthens your ability to cope and grow." },
+      { question: "Adaptability means staying rigid in routines.", answers:["True","False"], correct:"False", explanation:"Adaptability is adjusting without losing composure." },
+      { question: "Depression is only about feeling sad.", answers:["True","False"], correct:"False", explanation:"Depression includes emptiness, fatigue, and loss of interest." },
+      { question: "Social withdrawal is a symptom of depression.", answers:["True","False"], correct:"True", explanation:"Depression can cause reduced social engagement." },
+      { question: "Anxiety disorders are just overthinking.", answers:["True","False"], correct:"False", explanation:"Anxiety involves physiological responses and chronic worry." },
+      { question: "Panic attacks can involve rapid heartbeat and shortness of breath.", answers:["True","False"], correct:"True", explanation:"Panic attacks include intense physical and emotional symptoms." },
+      { question: "Bipolar disorder includes mood swings between depression and mania.", answers:["True","False"], correct:"True", explanation:"Bipolar disorder affects energy, behavior, and thinking." },
+      { question: "Manic phases involve decreased energy.", answers:["True","False"], correct:"False", explanation:"Manic phases involve elevated energy and impulsivity." },
+      { question: "PTSD can cause flashbacks and hypervigilance.", answers:["True","False"], correct:"True", explanation:"PTSD develops after trauma and affects daily functioning." },
+      { question: "Burnout only affects work performance.", answers:["True","False"], correct:"False", explanation:"Burnout includes emotional and physical exhaustion affecting many areas of life." },
+      { question: "Adjustment disorders occur when responses to life changes are excessive.", answers:["True","False"], correct:"True", explanation:"Symptoms can interfere with daily life but are tied to stressors." },
+      { question: "Seeking help for mental health is a sign of weakness.", answers:["True","False"], correct:"False", explanation:"Seeking help is a sign of strength and self-care." },
+      { question: "Schizophrenia means having split personalities.", answers:["True","False"], correct:"False", explanation:"Schizophrenia affects perception and thinking, not multiple personalities." }
+    ];
+
+    const questionEl = document.getElementById("question");
+    const answersContainer = document.querySelector(".answers-container");
+    const nextBtn = document.getElementById("next-btn");
+    const resultContainer = document.getElementById("result");
+    const finalScoreEl = document.getElementById("final-score");
+    const feedbackEl = document.getElementById("feedback");
+    const resultFeedbackEl = document.getElementById("result-feedback");
+    const resultEncourageEl = document.getElementById("result-encourage");
+    const restartBtn = document.getElementById("restart-btn");
+    const progressFill = document.querySelector(".progress-fill");
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const current = quizData[currentQuestion];
+      questionEl.textContent = current.question;
+      answersContainer.innerHTML = "";
+      feedbackEl.textContent = "";
+      document.getElementById("feedback-container").classList.remove("show");
+
+      current.answers.forEach(answer => {
+        const btn = document.createElement("button");
+        btn.textContent = answer;
+        btn.addEventListener("click", () => selectAnswer(answer));
+        answersContainer.appendChild(btn);
+      });
+
+      progressFill.style.width = `${(currentQuestion / quizData.length) * 100}%`;
+      document.querySelector(".quiz-card").classList.add("show");
+    }
+
+    function selectAnswer(answer) {
+      const current = quizData[currentQuestion];
+      if(answer === current.correct){
+        score++;
+        feedbackEl.textContent = "Correct! " + current.explanation;
+      } else {
+        feedbackEl.textContent = "Almost! " + current.explanation;
+      }
+      document.getElementById("feedback-container").classList.add("show");
+      Array.from(answersContainer.children).forEach(btn => btn.disabled = true);
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+      if(currentQuestion < quizData.length){
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    restartBtn.addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      resultContainer.style.display = "none";
+      document.getElementById("quiz").style.display = "block";
+      loadQuestion();
+    });
+
+    function showResult() {
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("feedback-container").classList.remove("show");
+      resultContainer.style.display = "block";
+
+      finalScoreEl.textContent = `You scored ${score} out of ${quizData.length}!`;
+
+      let msg = "";
+      let encouragement = "Keep exploring mental health resources to learn more!";
+      if(score === quizData.length) msg = "Amazing! You got all the answers right!";
+      else if(score >= quizData.length / 2) msg = "Great job! You know a lot, and you learned more along the way!";
+      else msg = "No worries! Every mistake is a learning opportunity. You've gained new knowledge.";
+
+      resultFeedbackEl.textContent = msg;
+      resultEncourageEl.textContent = encouragement;
+
+      progressFill.style.width = `100%`;
+    }
+
+    loadQuestion();
+  </script>
+</section>
+
+<section id="scenario-sim" class="fade">
+  <div class="scenario-container">
+    <h2>Mental Health Scenario Simulator</h2>
+
+    <!-- Scenario Display -->
+    <div id="scenario-box" class="scenario-box"></div>
+
+    <!-- Choices -->
+    <div id="choices" class="choices"></div>
+
+    <!-- XP Bar -->
+    <div class="xp-bar">
+      <div class="xp-fill"></div>
+    </div>
+
+    <!-- Badges -->
+    <div class="badge-container" id="scenario-badges"></div>
+  </div>
+
+  <style>
+    #scenario-sim {
+      background: linear-gradient(160deg, #07110d, #0b1c16);
+      padding: 4rem 2rem;
+      border-radius: 25px;
+      margin: 3rem auto;
+      max-width: 720px;
+      color: #e9f5ef;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    #scenario-sim h2 {
+      color: #2fdc9f;
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    .scenario-box {
+      background: #123326;
+      border-radius: 25px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      min-height: 140px;
+      font-size: 1.1rem;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+      display:flex; align-items:center;
+    }
+    .choices {
+      display:flex; flex-direction:column; gap:0.8rem; margin-bottom:1.5rem;
+    }
+    .choice-btn {
+      background: linear-gradient(135deg, #2fdc9f, #17a36c);
+      border:none;
+      color:#07110d;
+      font-weight:bold;
+      padding:0.9rem 1.2rem;
+      border-radius:20px;
+      cursor:pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .choice-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    .xp-bar {
+      background: #123326;
+      height: 14px;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      box-shadow: inset 0 0 5px rgba(255,255,255,0.1);
+    }
+    .xp-fill {
+      background: linear-gradient(90deg, #2fdc9f, #1fa37a, #17a36c);
+      height: 100%;
+      width: 0%;
+      border-radius: 14px;
+      transition: width 0.6s ease;
+      box-shadow: 0 0 10px #2fdc9f;
+    }
+    .badge-container {
+      display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center;
+    }
+    .badge {
+      background: linear-gradient(135deg,#1fa37a,#17a36c);
+      color: #07110d;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-weight:bold;
+      font-size:0.95rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: badgePop 0.5s ease;
+    }
+    @keyframes badgePop { from {transform: scale(0);} to {transform: scale(1);} }
+    .feedback {
+      background: #1fa37a;
+      color: #07110d;
+      padding: 0.9rem 1.2rem;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+  </style>
+
+  <script>
+    const scenarioBox = document.getElementById("scenario-box");
+    const choicesDiv = document.getElementById("choices");
+    const xpFill = document.querySelector("#scenario-sim .xp-fill");
+    const badgeContainer = document.getElementById("scenario-badges");
+
+    let xp = 0;
+    let badges = [];
+    let currentScenario = 0;
+
+    const scenarios = [
+      {
+        text: "You have a big exam tomorrow but feel anxious and tired. What do you do?",
+        options: [
+          {text:"Stay up all night cramming", feedback:"Cramming may increase anxiety and reduce retention.", xp:-5, badge:null},
+          {text:"Take a 30-min break, then review calmly", feedback:"Balanced approach reduces stress and improves focus.", xp:10, badge:"Calm Strategist"},
+          {text:"Ignore studying and play games", feedback:"Avoiding tasks may feel good temporarily, but adds stress later.", xp:0, badge:null}
+        ]
+      },
+      {
+        text:"You had a fight with a friend and feel down. How do you cope?",
+        options:[
+          {text:"Send angry messages", feedback:"Reacting impulsively may worsen the situation.", xp:-5, badge:null},
+          {text:"Take a deep breath and talk calmly", feedback:"Healthy communication helps repair relationships.", xp:10, badge:"Peace Builder"},
+          {text:"Avoid them completely", feedback:"Avoidance can prolong sadness and misunderstandings.", xp:0, badge:null}
+        ]
+      },
+      {
+        text:"You feel overwhelmed by assignments and deadlines. What is your approach?",
+        options:[
+          {text:"Panic and stress out", feedback:"High stress can reduce efficiency and well-being.", xp:-5, badge:null},
+          {text:"Prioritize tasks and take short breaks", feedback:"Planning reduces anxiety and increases productivity.", xp:10, badge:"Time Master"},
+          {text:"Do nothing and hope it resolves itself", feedback:"Avoidance delays progress and adds stress.", xp:0, badge:null}
+        ]
+      },
+      {
+        text:"You notice yourself procrastinating on an important task. How do you respond?",
+        options:[
+          {text:"Ignore it", feedback:"Procrastination increases stress over time.", xp:0, badge:null},
+          {text:"Break it into smaller steps", feedback:"Small steps make tasks manageable and reduce anxiety.", xp:10, badge:"Task Tamer"},
+          {text:"Do it all at once at the last minute", feedback:"Rushing may cause mistakes and stress.", xp:-5, badge:null}
+        ]
+      },
+      {
+        text:"A friend cancels plans last minute and you feel upset. What do you do?",
+        options:[
+          {text:"Get angry and argue", feedback:"Anger may damage friendships.", xp:-5, badge:null},
+          {text:"Accept and suggest another time", feedback:"Flexibility helps maintain relationships.", xp:10, badge:"Flexibility Pro"},
+          {text:"Ignore your feelings", feedback:"Suppressing emotions can increase frustration.", xp:0, badge:null}
+        ]
+      },
+      {
+        text:"You feel anxious before a presentation. How do you prepare?",
+        options:[
+          {text:"Avoid practicing", feedback:"Lack of preparation may increase anxiety.", xp:-5, badge:null},
+          {text:"Practice in short, focused sessions", feedback:"Structured preparation boosts confidence.", xp:10, badge:"Confident Speaker"},
+          {text:"Overthink and panic", feedback:"Overthinking reduces focus and increases anxiety.", xp:-5, badge:null}
+        ]
+      },
+      {
+        text:"You feel exhausted after a busy week. How do you recharge?",
+        options:[
+          {text:"Push through without rest", feedback:"Ignoring exhaustion may worsen burnout.", xp:-5, badge:null},
+          {text:"Take a proper rest and practice self-care", feedback:"Rest restores energy and mental clarity.", xp:10, badge:"Self-Care Champion"},
+          {text:"Distract yourself with social media for hours", feedback:"Temporary distraction doesn't replenish energy.", xp:0, badge:null}
+        ]
+      },
+      {
+        text:"You are struggling with motivation to exercise. What do you do?",
+        options:[
+          {text:"Skip it entirely", feedback:"Skipping reduces energy and mental resilience.", xp:0, badge:null},
+          {text:"Do a small, manageable workout", feedback:"Small steps build consistency and confidence.", xp:10, badge:"Fitness Starter"},
+          {text:"Overexert yourself", feedback:"Excessive effort may cause injury and burnout.", xp:-5, badge:null}
+        ]
+      },
+      {
+        text:"You feel nervous about meeting new people. How do you handle it?",
+        options:[
+          {text:"Avoid the situation", feedback:"Avoidance limits growth and confidence.", xp:0, badge:null},
+          {text:"Take deep breaths and start a small conversation", feedback:"Gradual exposure builds confidence.", xp:10, badge:"Social Explorer"},
+          {text:"Try to impress everyone forcefully", feedback:"Overcompensation can increase anxiety.", xp:-5, badge:null}
+        ]
+      },
+      {
+        text:"You notice negative self-talk affecting your mood. What is your response?",
+        options:[
+          {text:"Ignore it", feedback:"Ignoring it may reinforce negativity.", xp:0, badge:null},
+          {text:"Challenge the negative thoughts", feedback:"Reframing improves resilience and emotional health.", xp:10, badge:"Mindful Thinker"},
+          {text:"Let it control your day", feedback:"Ruminating can worsen mood.", xp:-5, badge:null}
+        ]
+      }
+    ];
+
+    function loadScenario(index){
+      scenarioBox.textContent = scenarios[index].text;
+      choicesDiv.innerHTML = "";
+      scenarios[index].options.forEach((opt)=>{
+        const btn = document.createElement("button");
+        btn.classList.add("choice-btn");
+        btn.textContent = opt.text;
+        btn.addEventListener("click",()=>handleChoice(opt));
+        choicesDiv.appendChild(btn);
+      });
+    }
+
+    function handleChoice(option){
+      addFeedback(option.feedback);
+      awardXP(option.xp);
+      if(option.badge) awardBadge(option.badge);
+
+      // Move to next scenario after short delay
+      currentScenario++;
+      if(currentScenario < scenarios.length){
+        setTimeout(()=>loadScenario(currentScenario),1200);
+      } else {
+        setTimeout(()=>finishSimulation(),1500);
+      }
+    }
+
+    function addFeedback(feedback){
+      const fb = document.createElement("div");
+      fb.classList.add("feedback");
+      fb.textContent = feedback;
+      choicesDiv.appendChild(fb);
+    }
+
+    function awardXP(amount){
+      xp += amount;
+      if(xp<0) xp=0;
+      if(xp>100) xp=100;
+      xpFill.style.width = xp+"%";
+    }
+
+    function awardBadge(name){
+      if(!badges.includes(name) && name){
+        badges.push(name);
+        const badgeEl = document.createElement("div");
+        badgeEl.classList.add("badge");
+        badgeEl.textContent = name;
+        badgeContainer.appendChild(badgeEl);
+      }
+    }
+
+    function finishSimulation(){
+      scenarioBox.textContent="🎉 You completed all scenarios!";
+      choicesDiv.innerHTML=`Total XP: ${xp} <br> Badges Earned: ${badges.join(", ") || "None"}`;
+    }
+
+    loadScenario(currentScenario);
+  </script>
+</section>
+
+<section id="contact">
+  <div class="container fade">
+    <h2>Get Support</h2>
+    <p>
+      Struggling does not mean you are weak, broken, or failing.
+      It means you are human and responding to pressure, pain, or change.
+      You do not have to carry everything on your own.
+    </p>
+
+    <p>
+      Reaching out for support can feel intimidating, especially when you are tired,
+      overwhelmed, or unsure how to explain what you are feeling. Even so, speaking to
+      someone who listens without judgment can bring relief, clarity, and a sense of
+      grounding during difficult moments.
+    </p>
+
+    <p>
+      Support does not always mean having the perfect words. It can begin with a simple
+      message, a phone call, or choosing to let someone walk alongside you for a while.
+      Whether you are facing anxiety, depression, burnout, trauma, or emotional exhaustion,
+      help is available and you deserve access to it.
+    </p>
+
+    <p>
+      If you feel unsafe, overwhelmed, or unsure how to cope, please reach out to one of
+      the trusted support services below. These organisations offer confidential,
+      compassionate assistance and are there to help you through moments of crisis or distress.
+    </p>
+
+    <p>
+      <strong>South Africa – Immediate Support:</strong><br>
+      SADAG Suicide Crisis Line (24/7): <strong>0800 567 567</strong><br>
+      WhatsApp (message only): <strong>076 882 2775</strong>
+    </p>
+
+    <p>
+      If you are in immediate danger, please contact local emergency services or go to the
+      nearest emergency facility.
+    </p>
+
+    <p>
+      Healing is not linear. Taking one small step toward support today is enough.
+      You are allowed to ask for help. You are allowed to rest. And you are not alone.
+    </p>
+  </div>
+  </section>
+</section>
+  </div>
+</section>
+
+<section id="lifeline-pretoria">
+  <div class="container fade">
+    <h2>LifeLine Pretoria</h2>
+    <p>
+      <strong>Lifeline Pretoria</strong> and its wider network in Pretoria are part of the LifeLine community-based mental and emotional health support organisations in South Africa. LifeLine Pretoria provides free, confidential counselling and crisis intervention services to individuals and families who need emotional support, coping skills, and compassionate listening.  
+      LifeLine counsellors are trained to assist with stress, relationships, bereavement, trauma, and emotional difficulties, helping people feel heard and supported without judgment.
+    </p>
+    <p>
+      Services include telephonic and face-to-face counselling, suicide support, trauma counselling, relationship support, and personal growth guidance, all offered at no cost to the community. 
+    </p>
+    <h3>Contact & Support</h3>
+    <ul>
+      <li><strong>Central bookings:</strong> 012 804 1853 </li>
+      <li><strong>Crisis Line:</strong> 012 804 3619 </li>
+      <li><strong>Email:</strong> reception@lifelinepta.org.za </li>
+      <li><strong>National 24-hour helpline:</strong> 0861 322 322 (LifeLine National Counselling Line) </li>
+    </ul>
+    <p>
+      LifeLine Pretoria is committed to serving all members of the community regardless of background, offering a safe space to talk through hard moments and access meaningful support.
+    </p>
+  </div>
+</section>
+
+<section id="sadag">
+  <div class="container fade">
+    <h2>South African Depression and Anxiety Group (SADAG)</h2>
+
+    <p>
+      The <strong>South African Depression and Anxiety Group (SADAG)</strong> is one of the
+      country’s leading mental health support organisations. SADAG provides free,
+      confidential support, education, and crisis intervention to individuals
+      experiencing depression, anxiety, trauma, suicidal thoughts, and emotional distress.
+    </p>
+
+    <p>
+      SADAG works with trained counsellors, psychologists, and mental health professionals
+      to ensure that help is accessible to anyone who needs it, regardless of background
+      or financial means. Their services include crisis counselling, referrals,
+      psychoeducation, and ongoing emotional support.
+    </p>
+
+    <h3>Contact & Support</h3>
+    <p>
+      If you or someone you know is struggling, SADAG offers multiple ways to reach out:
+    </p>
+
+    <ul>
+      <li><strong>Suicide Crisis Line (24/7):</strong> 0800 567 567</li>
+      <li><strong>Depression & Anxiety Helpline:</strong> 0800 21 22 23</li>
+      <li><strong>WhatsApp (message only):</strong> 076 882 2775</li>
+      <li><strong>SMS:</strong> 31393 (call-back service)</li>
+    </ul>
+
+    <p>
+      Reaching out for support is not a sign of weakness. It is a step toward care,
+      safety, and healing.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container fade">
+    <h2>Founder</h2>
+    <div class="founder">
+      <p>Mental Agility was founded by <strong>Blessing Sibeko</strong> as a space for reflection, emotional strength, and adaptive thinking, inspired by a personal mental health journey.</p>
+      <p>The official introduction takes place on <strong>31 January</strong>, marking the start of an ongoing conversation about mental health, resilience, and self-awareness.</p>
+    </div>
+  </div>
+  
+</section><footer>
+  <p>&copy; 2026 Mental Agility. All rights reserved.</p>
+</footer><script>
+const faders = document.querySelectorAll('.fade');
+const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); }); }, { threshold:0.2 });
+faders.forEach(el => observer.observe(el));
+</script></body>
+</html>
