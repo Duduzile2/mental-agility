@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://duduzile2.github.io/mental-agility/sitemap.xml
